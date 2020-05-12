@@ -1,8 +1,7 @@
 
 html, body {
-    min-height: 100% !important;
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -10,29 +9,59 @@ body {
   padding: 8px;
 }
 
-button {
-  display: block;
-  margin: auto;
+#start {
   position: relative;
   top: 40%;
+  width: 100%;
+  text-align: center;
+}
+
+#code-input {
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+}
+
+#start-button {
+  display: block;
+  margin: auto;
   padding: 10px;
   font-size: 16px;
-  background-color: #000f1c;
   border-radius: 3px;
-  color: white;
   font-weight: bold;
+  color: white;
+  border: none;
+}
+
+#start-button:not(:disabled) {
   cursor: pointer;
+  background-color: #000f1c;
+}
+
+#start-button:disabled {
+  cursor: not-allowed ;
+  background-color: #7691a8;
 }
 
 video {
   width: 100%;
 }
 
-#videos {
+#chat-room {
   display: grid;
   grid-gap: 16px;
   width: 100%;
   grid-template-columns: 1fr 3fr;
+}
+
+#remote-view-container{
+  position: relative;
+  grid-column: 2;
+  background-color: black;
+  height: 95vh;
 }
 
 #self-view {
@@ -41,7 +70,40 @@ video {
 }
 
 #remote-view {
-  grid-column: 2;
-  background-color: black;
-  height: 95vh;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#view-buttons {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  position: absolute;
+  border-radius: 3px;
+  background-color: darkgray;
+  bottom: 10px;
+  padding: 10px;
+  left: 0;
+  right: 0;
+  margin: 20px;
+  text-align: center;
+}
+
+#view-buttons:hover {
+  opacity: 0.7;
+}
+
+.view-button {
+  background-color: darkgray;
+  border-color: darkgray;
+  border-radius: 3px;
+  font-size: 20px;
+  color: white;
+  padding: 5px;
+  border: none;
+}
+
+.view-button:hover {
+  cursor: pointer;
+  background-color: #757272;
 }
